@@ -1,0 +1,235 @@
+/* General Styles */
+body {
+    background: linear-gradient(135deg, #1a0033, #4b0082, #00c4ff); /* Nebula-inspired gradient */
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* Star Particles Effect */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/stardust.png"); /* Subtle star pattern */
+    opacity: 0.1;
+    z-index: 0;
+  }
+  
+  /* Buttons */
+  .resume-btn,
+  .back-btn {
+    position: fixed;
+    top: 20px;
+    padding: 12px 25px;
+    background: #1a0033; /* Deep space base */
+    color: #ffd700; /* Golden accent */
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 20px rgba(0, 196, 255, 0.8),
+      inset 0 0 10px rgba(255, 215, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .back-btn {
+    left: 20px;
+    right: auto;
+    background: transparent;
+    border: 2px solid #00c4ff;
+    color: #00c4ff;
+  }
+  .resume-btn:hover,
+  .back-btn:hover {
+    transform: scale(1.15) translateY(-2px);
+    box-shadow: 0 0 40px rgba(0, 196, 255, 1),
+      inset 0 0 20px rgba(255, 215, 0, 0.5);
+    color: #fff;
+  }
+  .resume-btn::after,
+  .back-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 215, 0, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+  }
+  .resume-btn:hover::after,
+  .back-btn:hover::after {
+    width: 200px;
+    height: 200px;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("https://www.transparenttextures.com/patterns/hexellence.png"),
+      rgba(0, 0, 0, 0.4);
+    background-blend-mode: overlay;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 15px; /* Reduced from 20px */
+    border-radius: 15px; /* Slightly reduced from 18px */
+    box-shadow: 0 0 20px rgba(0, 196, 255, 0.3); /* Reduced shadow */
+  }
+  .title {
+    color: #00c4ff; /* Neon cyan */
+    font-size: 20px; /* Reduced from 30px */
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 196, 255, 0.7); /* Reduced shadow */
+  }
+  .name h1 {
+    color: #ffd700; /* Golden glow */
+    font-size: 2.5rem; /* Reduced from 3.5rem */
+    font-weight: 700; /* Reduced from 800 */
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.7); /* Reduced shadow */
+  }
+  .lead {
+    font-size: 16px; /* Reduced from 22px */
+    color: #d3d3d3; /* Light silver */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4); /* Reduced shadow */
+  }
+  
+  /* Social Icons */
+  .social-icons i {
+    font-size: 2rem; /* Reduced from 2.8rem */
+    color: #d3d3d3;
+    transition: all 0.4s ease-in-out;
+    margin: 0 15px; /* Reduced from 20px */
+    position: relative;
+  }
+  .social-icons i::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(0, 196, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+  }
+  .social-icons i:hover {
+    color: #00c4ff;
+    transform: scale(1.3); /* Reduced from 1.5 */
+  }
+  .social-icons i:hover::before {
+    width: 80px; /* Reduced from 100px */
+    height: 80px;
+  }
+  
+  /* Skills Card */
+  .skills-card {
+    border: 2px solid #ffd700; /* Reduced from 3px */
+    border-radius: 10px; /* Reduced from 20px */
+    padding: 10px; /* Reduced from 30px */
+    text-align: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    background: rgba(26, 0, 51, 0.7); /* Darker nebula tint */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); /* Reduced shadow */
+    position: relative;
+    overflow: hidden;
+  }
+  .skills-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 150%; /* Reduced from 200% */
+    height: 150%; /* Reduced from 200% */
+    background: radial-gradient(
+      circle,
+      rgba(0, 196, 255, 0.2) 0%,
+      transparent 70%
+    );
+    animation: glowOrbit 6s infinite linear; /* Reduced from 8s */
+    z-index: 0;
+  }
+  @keyframes glowOrbit {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .skills-card:hover {
+    transform: scale(1.05) translateY(-3px); /* Reduced from 1.1 and -5px */
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6); /* Reduced shadow */
+  }
+  .skills-card h5 {
+    font-size: 1.2rem; /* Reduced from 1.6rem */
+    color: #ffd700;
+    position: relative;
+    z-index: 1;
+  }
+  .skills-card p {
+    font-size: 0.9rem; /* Reduced from 1.1rem */
+    color: #d3d3d3;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Skills Page */
+  .section-box {
+    background: rgba(26, 0, 51, 0.8); /* Darker nebula tint */
+    border-radius: 20px; /* Reduced from 25px */
+    padding: 20px; /* Reduced from 35px */
+    box-shadow: 0 0 20px rgba(0, 196, 255, 0.5); /* Reduced shadow */
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .section-box::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 150%; /* Reduced from 180% */
+    height: 150%; /* Reduced from 180% */
+    background: radial-gradient(
+      circle,
+      rgba(255, 215, 0, 0.2) 0%,
+      transparent 60%
+    );
+    animation: glowOrbit 8s infinite linear; /* Reduced from 10s */
+    z-index: 0;
+  }
+  .section-box:hover {
+    transform: scale(1.05) translateY(-3px); /* Reduced from 1.08 and -5px */
+    box-shadow: 0 0 40px rgba(0, 196, 255, 0.8); /* Reduced shadow */
+  }
+  .badge {
+    font-size: 1.1rem; /* Reduced from 1.3rem */
+    background: #1a0033; /* Deep space base */
+    color: #ffd700;
+    padding: 10px 15px; /* Reduced from 12px 20px */
+    border-radius: 20px; /* Reduced from 25px */
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.4); /* Reduced shadow */
+    position: relative;
+    z-index: 1;
+  }
+  .badge:hover {
+    transform: scale(1.1) translateY(-2px); /* Reduced from 1.15 */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6); /* Reduced shadow */
+  }
